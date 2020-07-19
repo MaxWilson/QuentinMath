@@ -106,7 +106,7 @@ let view (g:Game) dispatch =
             [viewOptions g.settings dispatch; hintTable]
         else [
             h1[ClassName "title"][str "QuentinMath"]
-            h2[ClassName "subtitle"][str "the Awesome Math Game for Kids!"]
+            h2[ClassName "subtitle"][str "The Awesome Math Game for Kids!"]
             h3[ClassName "scoreDisplay"][str <| sprintf "Score: %d" g.score]
             if g.messageToUser.IsSome then
                 div[ClassName "numDisplay"; Style[Color g.messageToUser.Value.color]][str g.messageToUser.Value.msg]

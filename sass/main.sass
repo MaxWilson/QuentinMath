@@ -20,10 +20,16 @@ body
 
     .title
         grid-area: title
+        font-size: 4rem
         margin: auto
+        height: 1.5em
+        color: skyblue
     .subtitle
         grid-area: sub
+        font-size: 3rem
         margin: auto
+        height: 1.5em
+        color: purple
     .scoreDisplay
         grid-area: score
         text-align: center
@@ -79,16 +85,21 @@ body
                 text-align: center
                 width: 1vw
                 height: 1vw
+                background-color: white
+                opacity: 85%
             .needsReview
                 background-color: red
                 color: white
+                opacity: 100%
 
             .correct
                 background-color: green
                 color: white
+                opacity: 100%
 
             .chromeOnly
                 background-color: lightgrey
+                opacity: 100%
 
 @media (max-width: 500px)
     .ui.withHints

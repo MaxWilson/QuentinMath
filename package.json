@@ -1,7 +1,7 @@
 {
-  "name": "BMath",
+  "name": "QuentinMath",
   "version": "1.0.0",
-  "description": "Simple Fable App",
+  "description": "Awesome Math Game for Kids",
   "scripts": {
     "build": "webpack -p",
     "start": "webpack-dev-server",
