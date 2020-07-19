@@ -1,0 +1,181 @@
+html { height: 100% }
+body { height: 95% }
+
+#content { height: 100%; width: 100% }
+
+.shell {
+  height: 100%;
+  width: 100%;
+  display: inline-flex;
+}
+
+.rowDisplay {
+  flex-direction: row;
+}
+
+.columnDisplay {
+  flex-direction: column;
+}
+
+.scoreDisplay {
+  text-align: center
+}
+
+.settingsBar {
+  flex-direction: row;
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+.resetButton {
+  flex: 0 1 auto;
+  font-size: 200%;
+}
+
+.optionsButton {
+  font-size: 200%;
+}
+
+.keypad {
+  display: inline-flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+
+.numDisplay {
+  border: 2px solid black;
+  padding: 5px;
+  flex: 1 1 30%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.keyList {
+  flex-direction: row;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex: 1 1 60%;
+}
+
+.numkey {
+  flex: 1 1 30%;
+  font-size: 200%;
+}
+
+.hintDisplay {
+  flex: 0 1 100%;
+  border-left: 10px solid transparent;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.hinttable {
+  font-size: 1.5em;
+}
+
+.hide {
+  display: none;
+}
+
+.hintcell {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  width: 40px;
+}
+
+.needsreview {
+  background-color: red;
+  color: white;
+}
+
+.correct {
+  background-color: green;
+  color: white;
+}
+
+.chromeOnly {
+  background-color: lightgrey;
+}
+
+.reviewList {
+  list-style:none;
+  overflow:auto;
+  color: red;
+  font-weight: bold;
+  font-size: 130%;
+  width: 70%;
+}
+
+.optionsDisplay {
+  display: flex;
+  flex: 0 1 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: 4px;
+}
+
+.optionInput {
+  padding: 2px;
+  font-size: 150%;
+  margin: 10px;
+  flex: 0 1 auto;
+}
+
+.optionDoneButton {
+  flex: 0 1 auto;
+  font-size: 200%;
+}
+
+.optionSpan {
+    display: inline-flex;
+}
+
+.optionLabel {
+  font-size: 200%;
+  margin: 5px;
+}
+
+.option {
+  border: 1px solid black;
+  margin: 5px;
+  font-size: 200%;
+  background-color: white;
+  flex: 1 1 25%;
+}
+
+.option.selected {
+  background-color: greenyellow;
+}
+
+@media(max-width:30em) {
+  body {
+    font-size:12px;
+  }
+  .hintcell {
+    width: 10px;
+    font-size: 8px;
+  }
+  .rowDisplay {
+    flex-direction: column;
+  }
+  .keypad {
+    min-height: -moz-min-content;
+    min-height: -webkit-min-content;
+    min-height: min-content;
+  }
+  .keyList {
+    min-height: -moz-min-content;
+    min-height: -webkit-min-content;
+    min-height: min-content;
+  }
+  .hintDisplay {
+    min-height: -moz-min-content;
+    min-height: -webkit-min-content;
+    min-height: min-content;
+  }
+}
