@@ -2,11 +2,14 @@ source https://nuget.org/api/v2
 
 storage:none
 
-nuget Fable.Elmish.HMR
-nuget FSharp.Core
-nuget Fable.Core
-nuget Fable.Elmish.React
-nuget Fable.Elmish.Browser
-nuget Fable.Elmish.Debugger
-
-clitool dotnet-fable
+nuget Fable.Browser.Dom 1.2.0
+nuget Fable.Elmish 3.1.0
+nuget Fable.React 6.2.0
+nuget FSharp.Core 4.7.2
+nuget Fable.Core 3.1.5
+nuget Fable.Elmish.React 3.0.1
+nuget Fable.Elmish.Browser 3.0.4
+nuget Fable.Elmish.Debugger 3.2.0
+nuget Fable.Elmish.HMR 4.0.1
+nuget Feliz 1.7.0
+nuget Thoth.Json 4.1.0

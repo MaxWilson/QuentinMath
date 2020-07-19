@@ -16,23 +16,20 @@ module Sounds =
     [<Emit("new Audio($0)")>]
     let sound file : HTMLAudioElement = jsNative
     let private cheers = [|
-                    sound("1_person_cheering-Jett_Rifkin-1851518140.mp3")
-                    sound("Cheer1.m4a")
-                    sound("Cheer2.m4a")
-                    sound("Cheer4.m4a")
-                    sound("Cheer5.m4a")
-                    sound("Cheer6.m4a")
+                    sound("1_person_cheering-Jett_Rifkin-1851518140.mp3"), 0.
+                    sound("Minions1.mp3"), 0.
+                    sound("Minions2.mp3"), 0.
+                    sound("Minions3.mp3"), 0.
+                    sound("Minions4.mp3"), 6.
                     |]
-    let play (sound: HTMLAudioElement) =
-        if sound.ended then sound.play()
-        else
-            sound.currentTime <- 0.
-            sound.play()
+    let play (sound: HTMLAudioElement, startTime: float) =
+        sound.currentTime <- startTime
+        sound.play()
     let cheer() =
         chooseRandom cheers |> play
     let bomb =
         let s = sound("Grenade Explosion-SoundBible.com-2100581469.mp3")
-        delay1 play s
+        delay1 play (s, 0.)
 open Sounds
 
 [<Emit("setTimeout($1, $0)")>]

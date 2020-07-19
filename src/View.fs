@@ -105,24 +105,24 @@ let view (g:Game) dispatch =
         if g.showOptions then
             [viewOptions g.settings dispatch; hintTable]
         else [
-            yield h3[ClassName "scoreDisplay"][str <| sprintf "Score: %d" g.score]
-            yield
-                if g.messageToUser.IsSome then
-                    div[ClassName "numDisplay"; Style[Color g.messageToUser.Value.color]][str g.messageToUser.Value.msg]
-                else
-                    div[ClassName "numDisplay"][str (sprintf "%s = %s" g.problem.question (if g.currentAnswer = "" then String.replicate g.problem.answer.Length "?" else g.currentAnswer))]
-            yield div[ClassName "keyList"][
+            h1[ClassName "title"][str "QuentinMath"]
+            h2[ClassName "subtitle"][str "the Awesome Math Game for Kids!"]
+            h3[ClassName "scoreDisplay"][str <| sprintf "Score: %d" g.score]
+            if g.messageToUser.IsSome then
+                div[ClassName "numDisplay"; Style[Color g.messageToUser.Value.color]][str g.messageToUser.Value.msg]
+            else
+                div[ClassName "numDisplay"][str (sprintf "%s = %s" g.problem.question (if g.currentAnswer = "" then String.replicate g.problem.answer.Length "?" else g.currentAnswer))]
+            div[ClassName "keyList"][
                 let maybeDispatch = if g.messageToUser.IsSome then ignore else dispatch
                 for k in keysOf g.settings.mathBase do
                     let keyButton label = btn label [onClick maybeDispatch (AnswerKey k)]
                     if not <| (k = Enter && g.settings.autoEnter) then
-                        yield
-                            match k with
-                            | Number(label) -> keyButton label
-                            | Enter -> keyButton "ENTER"
-                            | Enums.Backspace -> keyButton "Back"
-                            | HintKey -> keyButton "Show hints"
+                        match k with
+                        | Number(label) -> keyButton label
+                        | Enter -> keyButton "ENTER"
+                        | Enums.Backspace -> keyButton "Back"
+                        | HintKey -> keyButton "Show hints"
                 ]
-            if g.showHints then yield hintTable
+            if g.showHints then hintTable
             ]
         )
