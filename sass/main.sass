@@ -16,8 +16,14 @@ body
     display: grid
     grid-template-columns: 10% 80% 10%
     grid-template-rows: auto
-    grid-template-areas: ". . h" ". score ." ". question ." ". keys ."
+    grid-template-areas: ". . h" ". title ." ". sub ." ". score ." ". question ." ". keys ."
 
+    .title
+        grid-area: title
+        margin: auto
+    .subtitle
+        grid-area: sub
+        margin: auto
     .scoreDisplay
         grid-area: score
         text-align: center
@@ -33,6 +39,7 @@ body
         justify-content: center
         align-items: center
         display: flex
+        background-color: white
 
     .keyList
         grid-area: keys

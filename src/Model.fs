@@ -106,14 +106,14 @@ let FormatProblem mathType mathBase lhs rhs =
 let prob percentage =
     JS.Math.random() < (float percentage)/100.
 
-let inline persist key value =
-    localStorage.[key:string] <- Thoth.Json.Encode.Auto.toString(1, value)
+let inline persist (key:string) value =
+    localStorage.[key] <- Thoth.Json.Encode.Auto.toString(1, value)
 
-let inline retrievePersisted key defaultValue =
-    match localStorage.[key:string] with
+let inline retrievePersisted (key:string) defaultValue =
+    match localStorage.[key] with
     | null -> defaultValue
     | rawValue ->
-        match Thoth.Json.Decode.Auto.fromString(unbox<string> rawValue) with
+        match Thoth.Json.Decode.Auto.fromString(rawValue) with
         | Ok v -> v
         | Error _ -> defaultValue
 
